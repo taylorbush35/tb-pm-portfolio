@@ -109,10 +109,10 @@ export default function AboutPage() {
                   </div>
 
                   {/* Hover Tooltip/Overlay - Appears below on desktop, above on mobile */}
-                  <div className="pointer-events-none absolute left-0 top-full z-10 mt-6 w-full max-w-xs opacity-0 transition-all duration-300 ease-out group-hover:pointer-events-auto group-hover:mt-8 group-hover:opacity-100 sm:left-1/2 sm:-translate-x-1/2">
+                  <div className="pointer-events-none absolute left-1/2 top-full z-10 mt-6 w-full max-w-xs -translate-x-1/2 opacity-0 transition-all duration-300 ease-out group-hover:pointer-events-auto group-hover:mt-8 group-hover:opacity-100">
                     <div className="relative rounded-xl border border-border bg-card p-5 text-sm leading-relaxed text-foreground shadow-lg backdrop-blur-sm">
                       <p className="text-pretty">{role.description}</p>
-                      {/* Tooltip Arrow */}
+                      {/* Tooltip Arrow - Centered to align with timeline dot */}
                       <div className="absolute -top-2 left-1/2 h-4 w-4 -translate-x-1/2 rotate-45 border-l border-t border-border bg-card" />
                     </div>
                   </div>

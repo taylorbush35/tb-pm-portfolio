@@ -1,1 +1,13 @@
-node_modules
+# dependencies
+node_modules/
+
+# Next.js
+.next/
+out/
+
+# logs
+*.log
+next-development.log*
+
+# env
+.env*
