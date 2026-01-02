@@ -25,7 +25,9 @@ export function ThemeToggle() {
         className="h-9 w-9 rounded-md transition-colors hover:bg-secondary"
         aria-label="Toggle theme"
         disabled
-      />
+      >
+        {/* Empty placeholder - no icon to prevent hydration mismatch */}
+      </Button>
     )
   }
 
