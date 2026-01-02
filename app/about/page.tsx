@@ -2,18 +2,11 @@
 
 import { Navigation } from "@/components/navigation"
 import { Card } from "@/components/ui/card"
-import { Plane, Camera, Flag, ChevronDown, Sparkles } from "lucide-react"
-import { useState } from "react"
+import { Plane, Camera, Flag, Sparkles } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
 
 export default function AboutPage() {
-  const [expandedCards, setExpandedCards] = useState<number[]>([])
-
-  const toggleCard = (index: number) => {
-    setExpandedCards((prev) => (prev.includes(index) ? prev.filter((i) => i !== index) : [...prev, index]))
-  }
-
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
@@ -59,74 +52,73 @@ export default function AboutPage() {
           </div>
         </div>
 
-        <div className="mb-24 rounded-2xl bg-foreground px-8 py-16 text-background sm:px-12 sm:py-20">
-          <div className="mb-12">
-            <h2 className="mb-2 text-3xl font-bold tracking-tight sm:text-4xl">Professional Journey</h2>
-            <p className="text-background/70">Building products across startups and enterprise scale</p>
+        {/* Professional Journey Timeline */}
+        <div className="mb-24 pt-8">
+          <div className="mb-16">
+            <h2 className="mb-3 text-3xl font-bold tracking-tight sm:text-4xl">Professional Journey</h2>
+            <p className="text-muted-foreground">Building products across startups and enterprise scale</p>
           </div>
 
-          <div className="space-y-4">
-            {[
-              {
-                period: "2025 — Present",
-                title: "Product Manager",
-                company: "Workday (acquisition)",
-                description:
-                  "Build and scale AI-driven product experiences by defining strategy, guiding multi-quarter roadmaps, leading discovery, and partnering across engineering and AI teams to deliver measurable improvements in performance and user experience.",
-              },
-              {
-                period: "2023 — 2025",
-                title: "Associate Product Manager",
-                company: "Paradox, AI",
-                description:
-                  "Drove end-to-end development for conversational AI features—leading prioritization, experimentation, and user research to advance personalization, context-awareness, and early generative AI experiences.",
-              },
-              {
-                period: "2022 — 2023",
-                title: "Senior Product Content Specialist",
-                company: "Paradox, AI",
-                description:
-                  "Partnered with global enterprise clients and cross-functional teams to deliver high-quality conversational AI experiences, using performance data, KPI analysis, and customer insights to optimize workflows and shape early product direction.",
-              },
-            ].map((role, index) => {
-              const isExpanded = expandedCards.includes(index)
+          {/* Horizontal Timeline */}
+          <div className="relative">
+            {/* Timeline Line */}
+            <div className="absolute left-0 right-0 top-8 hidden h-px bg-border sm:block" />
 
-              return (
-                <Card
-                  key={index}
-                  className="group relative cursor-pointer overflow-hidden border-background/20 bg-background/10 transition-all hover:bg-background/20 hover:shadow-md"
-                  onClick={() => toggleCard(index)}
-                >
-                  <div className="absolute left-0 top-0 h-full w-1 bg-gradient-to-b from-accent to-purple-500 opacity-60 transition-opacity group-hover:opacity-100" />
+            {/* Timeline Items */}
+            <div className="relative grid grid-cols-1 gap-16 sm:grid-cols-3 sm:gap-12">
+              {[
+                {
+                  period: "2025 — Present",
+                  title: "Product Manager",
+                  company: "Workday (acquisition)",
+                  description:
+                    "Build and scale AI-driven product experiences by defining strategy, guiding multi-quarter roadmaps, leading discovery, and partnering across engineering and AI teams to deliver measurable improvements in performance and user experience.",
+                },
+                {
+                  period: "2023 — 2025",
+                  title: "Associate Product Manager",
+                  company: "Paradox, AI",
+                  description:
+                    "Drove end-to-end development for conversational AI features—leading prioritization, experimentation, and user research to advance personalization, context-awareness, and early generative AI experiences.",
+                },
+                {
+                  period: "2022 — 2023",
+                  title: "Senior Product Content Specialist",
+                  company: "Paradox, AI",
+                  description:
+                    "Partnered with global enterprise clients and cross-functional teams to deliver high-quality conversational AI experiences, using performance data, KPI analysis, and customer insights to optimize workflows and shape early product direction.",
+                },
+              ].map((role, index) => (
+                <div key={index} className="group relative">
+                  {/* Date Stamp - Above line on desktop */}
+                  <div className="mb-8 text-xs font-medium uppercase tracking-wider text-muted-foreground sm:mb-10">
+                    {role.period}
+                  </div>
 
-                  <div className="p-6 pl-8">
-                    <div className="mb-4 flex items-start justify-between gap-4">
-                      <div className="flex-1">
-                        <div className="mb-2 text-xs font-semibold uppercase tracking-wider text-accent">
-                          {role.period}
-                        </div>
-                        <h3 className="mb-1 text-xl font-bold text-background">{role.title}</h3>
-                        <div className="font-medium text-background/70">{role.company}</div>
-                      </div>
-                      <ChevronDown
-                        className={`size-5 flex-shrink-0 text-background/60 transition-transform duration-200 ${
-                          isExpanded ? "rotate-180" : ""
-                        }`}
-                      />
-                    </div>
-                    <div
-                      className={`grid transition-all duration-200 ${
-                        isExpanded ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
-                      }`}
-                    >
-                      <div className="overflow-hidden">
-                        <p className="text-pretty leading-relaxed text-background/80">{role.description}</p>
-                      </div>
+                  {/* Timeline Dot */}
+                  <div className="absolute left-1/2 top-8 hidden h-2.5 w-2.5 -translate-x-1/2 -translate-y-1/2 rounded-full border-2 border-border bg-foreground transition-all duration-200 group-hover:scale-150 group-hover:border-primary/50 sm:block" />
+
+                  {/* Job Title & Company - Interactive element */}
+                  <div className="space-y-1.5 pt-2">
+                    <h3 className="cursor-default text-xl font-semibold leading-tight text-foreground transition-colors duration-200 group-hover:text-primary/90 sm:text-2xl">
+                      {role.title}
+                    </h3>
+                    <div className="text-sm font-medium text-muted-foreground transition-colors duration-200 group-hover:text-foreground/80">
+                      {role.company}
                     </div>
                   </div>
-                </Card>
-              )
-            })}
+
+                  {/* Hover Tooltip/Overlay - Appears below on desktop, above on mobile */}
+                  <div className="pointer-events-none absolute left-0 top-full z-10 mt-6 w-full max-w-xs opacity-0 transition-all duration-300 ease-out group-hover:pointer-events-auto group-hover:mt-8 group-hover:opacity-100 sm:left-1/2 sm:-translate-x-1/2">
+                    <div className="relative rounded-xl border border-border bg-card p-5 text-sm leading-relaxed text-foreground shadow-lg backdrop-blur-sm">
+                      <p className="text-pretty">{role.description}</p>
+                      {/* Tooltip Arrow */}
+                      <div className="absolute -top-2 left-1/2 h-4 w-4 -translate-x-1/2 rotate-45 border-l border-t border-border bg-card" />
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
 
