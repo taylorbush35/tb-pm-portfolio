@@ -74,9 +74,9 @@ export default function ToolsPage() {
                 {category.tools.map((tool) => (
                   <Card
                     key={tool.name}
-                    className="group border-border/50 p-5 transition-all hover:border-accent/50 hover:shadow-md"
+                    className="group border-border/50 p-5 transition-all hover:border-primary/50 hover:shadow-md hover:shadow-primary/10 dark:hover:shadow-primary/20"
                   >
-                    <h3 className="mb-2 font-semibold transition-colors group-hover:text-accent">{tool.name}</h3>
+                    <h3 className="mb-2 font-semibold transition-colors group-hover:text-primary">{tool.name}</h3>
                     <p className="text-pretty text-sm italic leading-relaxed text-muted-foreground">{tool.note}</p>
                   </Card>
                 ))}

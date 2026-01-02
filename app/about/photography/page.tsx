@@ -98,7 +98,7 @@ export default function PhotographyPage() {
           {photos.map((photo, index) => (
             <div
               key={photo.id}
-              className={`group relative overflow-hidden rounded-xl bg-muted ring-1 ring-border/50 transition-all hover:-translate-y-1 hover:shadow-2xl hover:ring-accent/30
+              className={`group relative overflow-hidden rounded-xl bg-muted ring-1 ring-border/50 transition-all hover:-translate-y-1 hover:shadow-2xl hover:ring-primary/30
                 ${photo.size === "tall" ? "row-span-2" : ""}
                 ${photo.size === "wide" ? "sm:col-span-2 lg:col-span-2" : ""}
                 ${photo.size === "square" ? "row-span-1" : ""}

@@ -65,11 +65,11 @@ export default function AboutPage() {
         </div>
 
         {/* Professional Journey Timeline */}
-        <div className="relative mb-24 py-16 sm:py-20">
+        <div className="relative mb-24 rounded-2xl py-16 sm:py-20">
           {/* Subtle background gradient - mode specific, fades naturally */}
-          <div className="absolute inset-0 bg-gradient-to-b from-muted/30 via-muted/15 to-transparent dark:from-muted/20 dark:via-muted/10 dark:to-transparent" />
+          <div className="absolute inset-0 rounded-2xl bg-gradient-to-b from-muted/30 via-muted/15 to-transparent dark:from-muted/20 dark:via-muted/10 dark:to-transparent" />
           {/* Subtle accent gradient overlay - enhanced purple in both modes */}
-          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/10 to-transparent dark:via-primary/10" />
+          <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-transparent via-primary/10 to-transparent dark:via-primary/10" />
 
           <div className="relative mb-16">
             <h2 className="mb-3 text-3xl font-bold tracking-tight transition-colors duration-300 hover:text-primary/80 sm:text-4xl">

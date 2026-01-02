@@ -58,15 +58,15 @@ export default function WorkPage() {
         <div className="grid gap-6 sm:grid-cols-2">
           {projects.map((project) => (
             <Link key={project.id} href={`/work/${project.id}`}>
-              <Card className="group h-full cursor-pointer border-border/50 p-6 transition-all hover:border-accent/50 hover:shadow-lg">
+              <Card className="group h-full cursor-pointer border-border/50 p-6 transition-all hover:border-primary/50 hover:shadow-lg hover:shadow-primary/10 dark:hover:shadow-primary/20">
                 <div className="mb-3 flex items-start justify-between">
                   <span className="rounded-full bg-secondary px-3 py-1 text-xs font-medium text-muted-foreground">
                     {project.year}
                   </span>
-                  <ArrowRight className="size-4 text-muted-foreground transition-transform group-hover:translate-x-1 group-hover:text-accent" />
+                  <ArrowRight className="size-4 text-muted-foreground transition-transform group-hover:translate-x-1 group-hover:text-primary" />
                 </div>
 
-                <h3 className="mb-3 text-balance text-xl font-semibold leading-tight transition-colors group-hover:text-accent">
+                <h3 className="mb-3 text-balance text-xl font-semibold leading-tight transition-colors group-hover:text-primary">
                   {project.title}
                 </h3>
 

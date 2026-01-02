@@ -19,7 +19,7 @@ export function Navigation() {
     <nav className="sticky top-0 z-50 border-b border-border/40 bg-background/80 backdrop-blur-lg">
       <div className="mx-auto max-w-6xl px-6 sm:px-8">
         <div className="flex h-16 items-center justify-between">
-          <Link href="/" className="text-lg font-semibold tracking-tight transition-colors hover:text-accent">
+          <Link href="/" className="text-lg font-semibold tracking-tight transition-colors hover:text-primary">
             TB
           </Link>
 
@@ -30,7 +30,7 @@ export function Navigation() {
                   key={item.href}
                   href={item.href}
                   className={cn(
-                    "rounded-md px-4 py-2 text-sm font-medium transition-all hover:bg-secondary",
+                    "rounded-md px-4 py-2 text-sm font-medium transition-all hover:bg-primary/10 hover:text-primary",
                     pathname === item.href && "bg-secondary text-foreground",
                   )}
                 >

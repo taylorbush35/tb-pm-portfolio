@@ -24,7 +24,7 @@ export default function TravelPage() {
       highlight: "Antibes, Nice, Nimes",
       reflection: "Slowed down, soaked it in. The art of living well isn't rushed.",
       size: "normal",
-      image: "/images/5daf69e7-5ec6-4f92-be10-bb724590ccf0-4-5005-c.jpeg",
+      image: "/images/nicebuildings.jpg",
     },
     {
       name: "Ireland",
@@ -40,7 +40,7 @@ export default function TravelPage() {
       highlight: "Rome, Florence, Orvieto, Pisa, Cinque Terre",
       reflection: "History layered on history. Every meal, every piazza — pure magic.",
       size: "wide",
-      image: "/images/2dbc3cb7-3a45-4443-918d-a7c7a60f06ab-1-105-c.jpeg",
+      image: "/images/vaticancity.jpeg",
     },
     {
       name: "Monaco",
@@ -122,35 +122,52 @@ export default function TravelPage() {
           {countries.map((country, index) => (
             <div
               key={country.name}
-              className={`group relative overflow-hidden rounded-2xl transition-all duration-300 hover:-translate-y-1 hover:shadow-xl ${
+              className={`group relative overflow-hidden rounded-2xl transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/20 dark:hover:shadow-primary/30 ${
                 country.size === "wide" ? "sm:col-span-2" : ""
               }`}
               onMouseEnter={() => setHoveredCountry(country.name)}
               onMouseLeave={() => setHoveredCountry(null)}
               style={{ animationDelay: `${index * 50}ms` }}
             >
-              {/* Background image with gradient overlay */}
-              <div className="absolute inset-0 bg-gradient-to-br from-accent/20 via-accent/10 to-accent/5" />
+              {/* Background image with enhanced gradient overlay for light mode */}
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-primary/5 to-transparent dark:from-accent/20 dark:via-accent/10 dark:to-accent/5" />
               <img
                 src={country.image || `/.jpg?height=400&width=600&query=${encodeURIComponent(country.highlight)}`}
                 alt={country.name}
-                className="absolute inset-0 size-full object-cover opacity-80 transition-opacity duration-300 group-hover:opacity-60"
+                className={`absolute inset-0 size-full object-cover opacity-100 transition-all duration-500 group-hover:scale-110 group-hover:opacity-90 dark:opacity-80 dark:group-hover:opacity-60 ${
+                  country.name === "Italy" || country.name === "France" || country.name === "Ireland" || country.name === "Scotland" || country.name === "Costa Rica" || country.name === "Turks & Caicos" ? "object-center" : ""
+                }`}
+                style={
+                  country.name === "Italy"
+                    ? { objectPosition: "center 25%" }
+                    : country.name === "France"
+                      ? { objectPosition: "center 75%" }
+                      : country.name === "Ireland"
+                        ? { objectPosition: "center 75%" }
+                        : country.name === "Scotland"
+                          ? { objectPosition: "center 75%" }
+                          : country.name === "Costa Rica"
+                            ? { objectPosition: "center 75%" }
+                            : country.name === "Turks & Caicos"
+                              ? { objectPosition: "center 65%" }
+                              : undefined
+                }
               />
 
-              {/* Always visible info */}
-              <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-black/80 via-black/40 to-transparent p-6">
+              {/* Always visible info with enhanced contrast */}
+              <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-black/90 via-black/60 to-transparent p-6 dark:from-black/80 dark:via-black/40">
                 <h2 className="text-2xl font-bold text-white drop-shadow-lg">{country.name}</h2>
-                <p className="mt-1 text-sm font-medium text-white/80">{country.visits}</p>
+                <p className="mt-1 text-sm font-medium text-white/90 drop-shadow-md dark:text-white/80">{country.visits}</p>
               </div>
 
               {/* Reflection overlay (appears on hover) */}
               <div
-                className={`absolute inset-0 flex flex-col justify-center bg-black/85 p-6 transition-opacity duration-300 ${
+                className={`absolute inset-0 flex flex-col justify-center bg-black/90 p-6 transition-opacity duration-300 dark:bg-black/85 ${
                   hoveredCountry === country.name ? "opacity-100" : "opacity-0"
                 }`}
               >
                 <p className="text-balance text-lg italic italic-relaxed text-white">{country.reflection}</p>
-                <p className="mt-4 text-sm font-medium text-white/60">{country.highlight}</p>
+                <p className="mt-4 text-sm font-medium text-white/70 dark:text-white/60">{country.highlight}</p>
               </div>
             </div>
           ))}
@@ -168,18 +185,18 @@ export default function TravelPage() {
             {futureDestinations.map((destination, index) => (
               <div
                 key={destination.name}
-                className="group relative overflow-hidden rounded-2xl border-2 border-dashed border-accent/30 bg-accent/5 transition-all duration-300 hover:-translate-y-1 hover:border-accent/50 hover:shadow-lg"
+                className="group relative overflow-hidden rounded-2xl border-2 border-dashed border-primary/30 bg-primary/5 transition-all duration-300 hover:-translate-y-1 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/10 dark:border-accent/30 dark:bg-accent/5 dark:hover:border-accent/50"
                 style={{ animationDelay: `${index * 50}ms` }}
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-accent/10 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent dark:from-accent/10" />
                 <img
                   src={`/.jpg?height=300&width=400&query=${encodeURIComponent(destination.highlight)}`}
                   alt={destination.name}
-                  className="absolute inset-0 size-full object-cover opacity-30 transition-opacity duration-300 group-hover:opacity-20"
+                  className="absolute inset-0 size-full object-cover opacity-40 transition-all duration-500 group-hover:scale-110 group-hover:opacity-30 dark:opacity-30 dark:group-hover:opacity-20"
                 />
-                <div className="relative flex h-full flex-col justify-end p-6">
-                  <h3 className="text-xl font-bold">{destination.name}</h3>
-                  <p className="mt-1 text-sm font-medium text-accent">{destination.year}</p>
+                <div className="relative flex h-full flex-col justify-end bg-gradient-to-t from-black/40 via-transparent to-transparent p-6 dark:from-transparent">
+                  <h3 className="text-xl font-bold text-foreground drop-shadow-sm dark:text-foreground">{destination.name}</h3>
+                  <p className="mt-1 text-sm font-medium text-primary dark:text-accent">{destination.year}</p>
                 </div>
               </div>
             ))}
