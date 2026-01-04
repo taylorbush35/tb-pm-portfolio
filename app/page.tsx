@@ -76,7 +76,7 @@ export default function HomePage() {
                 </p>
               </div>
               <div className="border-t border-border pt-6">
-                <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
+                <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                   <Link
                     href="/about"
                     className="group flex flex-col items-center justify-center space-y-2 rounded-xl border-2 border-border bg-muted/30 p-4 transition-all duration-300 hover:border-primary/50 hover:bg-primary/10 hover:shadow-lg hover:shadow-primary/10"
@@ -91,14 +91,6 @@ export default function HomePage() {
                   >
                     <p className="text-center text-sm font-medium text-foreground transition-colors duration-300 group-hover:text-primary">
                       My Work
-                    </p>
-                  </Link>
-                  <Link
-                    href="/tools"
-                    className="group flex flex-col items-center justify-center space-y-2 rounded-xl border-2 border-border bg-muted/30 p-4 transition-all duration-300 hover:border-primary/50 hover:bg-primary/10 hover:shadow-lg hover:shadow-primary/10"
-                  >
-                    <p className="text-center text-sm font-medium text-foreground transition-colors duration-300 group-hover:text-primary">
-                      Tools I Love
                     </p>
                   </Link>
                 </div>
