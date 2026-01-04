@@ -9,57 +9,81 @@ import { useState } from "react"
 const photos = [
   {
     id: 1,
-    src: "/urban-street-scene.png",
-    alt: "Urban street scene",
-    size: "tall",
+    src: "/images/IMG_1040.JPG",
+    alt: "Photography",
+    size: "tall", // Vertical: 4000x6000
   },
   {
     id: 2,
-    src: "/travel-photography-landscape.jpg",
-    alt: "Travel landscape",
-    size: "wide",
+    src: "/images/DSCF0118.jpg",
+    alt: "Photography",
+    size: "tall", // Horizontal: 2976x1984 (displayed as vertical)
   },
   {
     id: 3,
-    src: "/everyday-life-candid-moment.jpg",
-    alt: "Everyday moment",
-    size: "square",
+    src: "/images/DSCF0443.jpg",
+    alt: "Photography",
+    size: "tall", // Horizontal: 2976x1984 (displayed as vertical)
   },
   {
     id: 4,
-    src: "/natural-light-portrait.png",
-    alt: "Natural light portrait",
-    size: "tall",
+    src: "/images/IMG_0943.jpeg",
+    alt: "Photography",
+    size: "tall", // Vertical: 4284x5712
   },
   {
     id: 5,
-    src: "/architecture-building-detail.jpg",
-    alt: "Architectural detail",
-    size: "wide",
+    src: "/images/IMG_1051.JPG",
+    alt: "Photography",
+    size: "tall", // Horizontal: 6000x4000 (displayed as vertical)
   },
   {
     id: 6,
-    src: "/food-photography-close-up.jpg",
-    alt: "Food close-up",
-    size: "square",
+    src: "/images/DSCF0124.jpg",
+    alt: "Photography",
+    size: "tall", // Horizontal: 2976x1984 (displayed as vertical)
   },
   {
     id: 7,
-    src: "/nature-outdoor-photography.jpg",
-    alt: "Nature scene",
-    size: "wide",
+    src: "/images/DSCF0422.jpg",
+    alt: "Photography",
+    size: "tall", // Horizontal: 2976x1984 (displayed as vertical)
   },
   {
     id: 8,
-    src: "/bw-street-scene.png",
-    alt: "Street photography B&W",
-    size: "tall",
+    src: "/images/IMG_1038.JPG",
+    alt: "Photography",
+    size: "tall", // Vertical: 4000x6000
   },
   {
     id: 9,
-    src: "/abstract-light-shadow.jpg",
-    alt: "Abstract light and shadow",
-    size: "square",
+    src: "/images/DSCF0431.jpg",
+    alt: "Photography",
+    size: "tall", // Horizontal: 2976x1984 (displayed as vertical)
+  },
+  {
+    id: 10,
+    src: "/images/DSCF0447.jpg",
+    alt: "Photography",
+    size: "tall", // Horizontal: 2976x1984 (displayed as vertical)
+  },
+  {
+    id: 11,
+    src: "/images/IMG_1043.JPG",
+    alt: "Photography",
+    size: "wide", // Horizontal: 6000x4000
+  },
+  {
+    id: 12,
+    src: "/images/8F4AADAE-58BD-420B-99F5-6E2F049F6810_1_105_c.jpeg",
+    alt: "Photography",
+    size: "wide", // Horizontal
+  },
+  {
+    id: 13,
+    src: "/images/205D9220-5E79-4EC7-9921-8EAEF26ED468_1_105_c.jpeg",
+    alt: "Photography",
+    size: "tall", // Horizontal (displayed as vertical)
   },
 ]
 
@@ -94,7 +118,7 @@ export default function PhotographyPage() {
         </div>
 
         {/* Dynamic Masonry-style Grid */}
-        <div className="grid auto-rows-[280px] grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid auto-rows-[200px] grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
           {photos.map((photo, index) => (
             <div
               key={photo.id}
