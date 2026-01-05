@@ -30,6 +30,7 @@ export default function HomePage() {
                 src="/images/gemini-20generated-20image.png"
                 alt="Taylor Bush"
                 fill
+                sizes="400px"
                 className="object-cover transition-transform duration-700 group-hover:scale-105"
                 priority
               />
@@ -105,7 +106,7 @@ export default function HomePage() {
                   src="/images/a757fa8e-ef67-400b-85b5-839726b854fc-1-105-c.jpeg"
                   alt="Taylor Bush"
                   fill
-                  sizes="(min-width: 1024px) 400px, 90vw"
+                  sizes="400px"
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
                 />
               </div>
