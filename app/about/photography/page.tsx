@@ -4,7 +4,6 @@ import { Navigation } from "@/components/navigation"
 import { Button } from "@/components/ui/button"
 import { ArrowLeft, Camera } from "lucide-react"
 import Link from "next/link"
-import { useState } from "react"
 
 const photos = [
   {
@@ -88,8 +87,6 @@ const photos = [
 ]
 
 export default function PhotographyPage() {
-  const [hoveredPhoto, setHoveredPhoto] = useState<number | null>(null)
-
   return (
     <div className="min-h-screen">
       <Navigation />
@@ -122,7 +119,7 @@ export default function PhotographyPage() {
           {photos.map((photo, index) => (
             <div
               key={photo.id}
-              className={`group relative overflow-hidden rounded-xl bg-muted ring-1 ring-border/50 transition-all hover:-translate-y-1 hover:shadow-2xl hover:ring-primary/30
+              className={`relative overflow-hidden rounded-xl bg-muted ring-1 ring-border/50
                 ${photo.size === "tall" ? "row-span-2" : ""}
                 ${photo.size === "wide" ? "sm:col-span-2 lg:col-span-2" : ""}
                 ${photo.size === "square" ? "row-span-1" : ""}
@@ -130,30 +127,12 @@ export default function PhotographyPage() {
               style={{
                 animationDelay: `${index * 50}ms`,
               }}
-              onMouseEnter={() => setHoveredPhoto(photo.id)}
-              onMouseLeave={() => setHoveredPhoto(null)}
             >
               <img
                 src={photo.src || "/placeholder.svg"}
                 alt={photo.alt}
-                className="size-full object-cover transition-transform duration-500 group-hover:scale-110"
+                className="size-full object-cover"
               />
-
-              {/* Gradient Overlay on Hover */}
-              <div
-                className={`absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent transition-opacity duration-300 ${
-                  hoveredPhoto === photo.id ? "opacity-100" : "opacity-0"
-                }`}
-              />
-
-              {/* Caption on Hover */}
-              <div
-                className={`absolute bottom-0 left-0 right-0 p-4 text-white transition-transform duration-300 ${
-                  hoveredPhoto === photo.id ? "translate-y-0" : "translate-y-full"
-                }`}
-              >
-                <p className="text-sm font-medium">{photo.alt}</p>
-              </div>
             </div>
           ))}
         </div>
