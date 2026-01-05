@@ -142,7 +142,7 @@
     overflow-y: auto;
     overflow-x: hidden;
   }
-  img {
+  img:not([data-nimg]) {
     max-width: 100%;
     height: auto;
   }
