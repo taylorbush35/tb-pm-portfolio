@@ -19,9 +19,9 @@ export default function HomePage() {
       <Navigation />
 
       <section className="relative z-10 mx-auto max-w-7xl px-6 pb-0 pt-12 sm:px-8 sm:pt-16">
-        <div className="grid gap-0 lg:grid-cols-2">
+        <div className="grid grid-cols-1 gap-0 lg:grid-cols-2">
           {/* Left: Photo */}
-          <div className="relative flex items-center justify-center py-16 lg:py-24">
+          <div className="relative flex items-center justify-center py-16 lg:py-24 lg:col-span-1">
             {/* Subtle background gradient */}
             <div className="absolute inset-0 bg-gradient-to-br from-muted/20 via-muted/10 to-transparent dark:from-muted/15 dark:via-muted/5 dark:to-transparent" />
             <div className="group relative z-10 h-[500px] w-[400px] shrink-0 overflow-hidden rounded-2xl shadow-2xl transition-all duration-500 hover:shadow-primary/20 hover:shadow-2xl">
@@ -38,7 +38,7 @@ export default function HomePage() {
           </div>
 
           {/* Right: Content */}
-          <div className="flex flex-col items-center justify-center space-y-8 px-8 py-16 text-center lg:px-16 lg:py-24">
+          <div className="flex flex-col items-center justify-center space-y-8 px-8 py-16 text-center lg:px-16 lg:py-24 lg:col-span-1">
             <div className="space-y-6">
               <h1 className="text-balance text-5xl font-bold tracking-tight transition-colors duration-300 hover:text-primary/80 sm:text-6xl lg:text-7xl">
                 TAYLOR BUSH
@@ -58,9 +58,9 @@ export default function HomePage() {
         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/10 to-transparent dark:via-primary/10" />
 
         <div className="relative z-10 mx-auto max-w-7xl px-6 sm:px-8">
-          <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
+          <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-16">
             {/* Left: About content */}
-            <div className="flex flex-col justify-center space-y-8 text-center lg:text-left">
+            <div className="flex flex-col justify-center space-y-8 text-center lg:text-left lg:col-span-1">
               <h2 className="text-balance text-4xl font-bold tracking-tight transition-colors duration-300 hover:text-primary/80 sm:text-5xl">
                 ABOUT
                 <br />
@@ -99,7 +99,7 @@ export default function HomePage() {
             </div>
 
             {/* Right: Photo */}
-            <div className="flex items-center justify-center">
+            <div className="flex items-center justify-center lg:col-span-1">
               <div className="group relative h-[500px] w-[400px] shrink-0 overflow-hidden rounded-2xl shadow-2xl transition-all duration-500 hover:shadow-primary/20 hover:shadow-2xl border border-red-500">
                 <div className="absolute inset-0 z-10 bg-gradient-to-t from-background/20 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
                 <Image
