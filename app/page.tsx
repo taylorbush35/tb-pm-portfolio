@@ -164,6 +164,11 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* Tailwind verification badge */}
+      <div className="fixed bottom-4 right-4 z-[9999] rounded bg-primary px-3 py-2 text-xs font-semibold text-primary-foreground">
+        TAILWIND OK
+      </div>
     </div>
   )
 }
