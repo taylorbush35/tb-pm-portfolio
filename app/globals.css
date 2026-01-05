@@ -146,4 +146,12 @@
     max-width: 100%;
     height: auto;
   }
+  /* Force image containers to respect dimensions */
+  [data-image-container] {
+    width: 400px !important;
+    height: 500px !important;
+    max-width: 400px !important;
+    min-width: 400px !important;
+    flex-shrink: 0 !important;
+  }
 }
