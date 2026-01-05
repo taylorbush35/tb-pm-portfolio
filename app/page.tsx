@@ -1,7 +1,7 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Navigation } from "@/components/navigation"
-import { Mail, Linkedin, FileDown } from "lucide-react"
+import { Linkedin, FileDown } from "lucide-react"
 import Image from "next/image"
 
 export default function HomePage() {
@@ -24,7 +24,7 @@ export default function HomePage() {
           <div className="relative flex items-center justify-center py-16 lg:py-24 lg:col-span-1">
             {/* Subtle background gradient */}
             <div className="absolute inset-0 bg-gradient-to-br from-muted/20 via-muted/10 to-transparent dark:from-muted/15 dark:via-muted/5 dark:to-transparent" />
-            <div className="group relative z-10 h-[650px] w-[500px] shrink-0 overflow-hidden rounded-2xl shadow-2xl transition-all duration-500 hover:shadow-primary/20 hover:shadow-2xl">
+            <div className="group relative z-10 h-[500px] w-[400px] shrink-0 overflow-hidden rounded-2xl shadow-2xl transition-all duration-500 hover:shadow-primary/20 hover:shadow-2xl">
               <div className="absolute inset-0 z-10 bg-gradient-to-t from-background/20 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
               <Image
                 src="/images/gemini-20generated-20image.png"
@@ -76,23 +76,27 @@ export default function HomePage() {
                 </p>
               </div>
               <div className="border-t border-border pt-6">
-                <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                  <Link
-                    href="/about"
-                    className="group flex flex-col items-center justify-center space-y-2 rounded-xl border-2 border-border bg-muted/30 p-4 transition-all duration-300 hover:border-primary/50 hover:bg-primary/10 hover:shadow-lg hover:shadow-primary/10"
+                <div className="flex flex-wrap items-center justify-center gap-4">
+                  <Button
+                    asChild
+                    size="lg"
+                    variant="default"
+                    className="rounded-full px-8 transition-all duration-300 hover:shadow-lg hover:shadow-primary/20"
                   >
-                    <p className="text-center text-sm font-medium text-foreground transition-colors duration-300 group-hover:text-primary">
+                    <Link href="/about">
                       Learn More About Me
-                    </p>
-                  </Link>
-                  <Link
-                    href="/work"
-                    className="group flex flex-col items-center justify-center space-y-2 rounded-xl border-2 border-border bg-muted/30 p-4 transition-all duration-300 hover:border-primary/50 hover:bg-primary/10 hover:shadow-lg hover:shadow-primary/10"
+                    </Link>
+                  </Button>
+                  <Button
+                    asChild
+                    size="lg"
+                    variant="default"
+                    className="rounded-full px-8 transition-all duration-300 hover:shadow-lg hover:shadow-primary/20"
                   >
-                    <p className="text-center text-sm font-medium text-foreground transition-colors duration-300 group-hover:text-primary">
+                    <Link href="/work">
                       My Work
-                    </p>
-                  </Link>
+                    </Link>
+                  </Button>
                 </div>
               </div>
             </div>
@@ -133,17 +137,6 @@ export default function HomePage() {
               variant="default"
               className="rounded-full px-8 transition-all duration-300 hover:shadow-lg hover:shadow-primary/20"
             >
-              <a href="mailto:taylor.bush@example.com">
-                <Mail className="mr-2 size-4 transition-transform duration-300 group-hover:scale-110" />
-                Get in Touch
-              </a>
-            </Button>
-            <Button
-              asChild
-              size="lg"
-              variant="outline"
-              className="rounded-full transition-all duration-300 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/10"
-            >
               <a href="https://www.linkedin.com/in/taylorbush35/" target="_blank" rel="noopener noreferrer">
                 <Linkedin className="mr-2 size-4 transition-transform duration-300 group-hover:scale-110" />
                 LinkedIn
@@ -152,10 +145,10 @@ export default function HomePage() {
             <Button
               asChild
               size="lg"
-              variant="outline"
-              className="rounded-full transition-all duration-300 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/10"
+              variant="default"
+              className="rounded-full px-8 transition-all duration-300 hover:shadow-lg hover:shadow-primary/20"
             >
-              <a href="/resume.pdf" download>
+              <a href="/Bush, Taylor Resume .pdf" download="Bush, Taylor Resume .pdf">
                 <FileDown className="mr-2 size-4 transition-transform duration-300 group-hover:scale-110" />
                 Resume
               </a>
@@ -163,11 +156,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
-      {/* Tailwind verification badge */}
-      <div className="fixed bottom-4 right-4 z-[9999] rounded bg-primary px-3 py-2 text-xs font-semibold text-primary-foreground">
-        TAILWIND OK
-      </div>
     </div>
   )
 }
