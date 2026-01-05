@@ -5,8 +5,10 @@ import { Card } from "@/components/ui/card"
 import { Plane, Camera, Flag, Sparkles, FileText, MessageSquare, Code2, Terminal, Bot } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
+import { useState } from "react"
 
 export default function AboutPage() {
+  const [expandedRole, setExpandedRole] = useState<number | null>(null)
   return (
     <div className="relative min-h-screen bg-background">
       {/* Ambient background layers */}
@@ -109,36 +111,53 @@ export default function AboutPage() {
                   description:
                     "Build and scale AI-driven product experiences by defining strategy, guiding multi-quarter roadmaps, leading discovery, and partnering across engineering and AI teams to deliver measurable improvements in performance and user experience.",
                 },
-              ].map((role, index) => (
-                <div key={index} className="group relative">
-                  {/* Date Stamp - Above line on desktop */}
-                  <div className="mb-8 text-xs font-medium uppercase tracking-wider text-muted-foreground transition-all duration-300 group-hover:text-foreground/70 group-hover:tracking-widest sm:mb-10">
-                    {role.period}
-                  </div>
+              ].map((role, index) => {
+                const isExpanded = expandedRole === index
+                return (
+                  <div 
+                    key={index} 
+                    className="group relative"
+                    onClick={() => setExpandedRole(isExpanded ? null : index)}
+                  >
+                    {/* Date Stamp - Above line on desktop */}
+                    <div className={`mb-8 text-xs font-medium uppercase tracking-wider transition-all duration-300 sm:mb-10 ${
+                      isExpanded ? "text-foreground/70 tracking-widest" : "text-muted-foreground group-hover:text-foreground/70 group-hover:tracking-widest"
+                    }`}>
+                      {role.period}
+                    </div>
 
-                  {/* Timeline Dot */}
-                  <div className="absolute left-1/2 top-8 hidden h-2.5 w-2.5 -translate-x-1/2 -translate-y-1/2 rounded-full border-2 border-border bg-foreground shadow-sm transition-all duration-300 group-hover:scale-150 group-hover:border-primary/50 group-hover:shadow-primary/50 group-hover:shadow-lg sm:block" />
+                    {/* Timeline Dot */}
+                    <div className={`absolute left-1/2 top-8 hidden h-2.5 w-2.5 -translate-x-1/2 -translate-y-1/2 rounded-full border-2 bg-foreground shadow-sm transition-all duration-300 sm:block ${
+                      isExpanded ? "scale-150 border-primary/50 shadow-primary/50 shadow-lg" : "border-border group-hover:scale-150 group-hover:border-primary/50 group-hover:shadow-primary/50 group-hover:shadow-lg"
+                    }`} />
 
-                  {/* Job Title & Company - Interactive element */}
-                  <div className="space-y-1.5 pt-2">
-                    <h3 className="cursor-default text-xl font-semibold leading-tight text-foreground transition-all duration-300 group-hover:translate-x-1 group-hover:text-primary/90 sm:text-2xl">
-                      {role.title}
-                    </h3>
-                    <div className="text-sm font-medium text-muted-foreground transition-all duration-300 group-hover:translate-x-0.5 group-hover:text-foreground/80">
-                      {role.company}
+                    {/* Job Title & Company - Interactive element */}
+                    <div className="space-y-1.5 pt-2">
+                      <h3 className={`cursor-pointer text-xl font-semibold leading-tight transition-all duration-300 sm:text-2xl ${
+                        isExpanded ? "translate-x-1 text-primary/90" : "text-foreground group-hover:translate-x-1 group-hover:text-primary/90"
+                      }`}>
+                        {role.title}
+                      </h3>
+                      <div className={`text-sm font-medium transition-all duration-300 ${
+                        isExpanded ? "translate-x-0.5 text-foreground/80" : "text-muted-foreground group-hover:translate-x-0.5 group-hover:text-foreground/80"
+                      }`}>
+                        {role.company}
+                      </div>
+                    </div>
+
+                    {/* Description Tooltip/Overlay - Shows on hover (desktop) or click (mobile) */}
+                    <div className={`absolute left-1/2 top-full z-10 mt-6 w-full max-w-xs -translate-x-1/2 transition-all duration-300 ease-out sm:pointer-events-none sm:opacity-0 sm:group-hover:pointer-events-auto sm:group-hover:mt-8 sm:group-hover:opacity-100 ${
+                      isExpanded ? "pointer-events-auto mt-8 opacity-100" : "pointer-events-none opacity-0"
+                    }`}>
+                      <div className="relative rounded-xl border border-border bg-card p-5 text-sm leading-relaxed text-foreground shadow-lg backdrop-blur-sm transition-all duration-300 sm:group-hover:shadow-xl dark:bg-card/95 dark:backdrop-blur-md">
+                        <p className="text-pretty">{role.description}</p>
+                        {/* Tooltip Arrow - Centered to align with timeline dot */}
+                        <div className="absolute -top-2 left-1/2 h-4 w-4 -translate-x-1/2 rotate-45 border-l border-t border-border bg-card dark:bg-card/95" />
+                      </div>
                     </div>
                   </div>
-
-                  {/* Hover Tooltip/Overlay - Appears below on desktop, above on mobile */}
-                  <div className="pointer-events-none absolute left-1/2 top-full z-10 mt-6 w-full max-w-xs -translate-x-1/2 opacity-0 transition-all duration-300 ease-out group-hover:pointer-events-auto group-hover:mt-8 group-hover:opacity-100">
-                    <div className="relative rounded-xl border border-border bg-card p-5 text-sm leading-relaxed text-foreground shadow-lg backdrop-blur-sm transition-all duration-300 group-hover:shadow-xl dark:bg-card/95 dark:backdrop-blur-md">
-                      <p className="text-pretty">{role.description}</p>
-                      {/* Tooltip Arrow - Centered to align with timeline dot */}
-                      <div className="absolute -top-2 left-1/2 h-4 w-4 -translate-x-1/2 rotate-45 border-l border-t border-border bg-card dark:bg-card/95" />
-                    </div>
-                  </div>
-                </div>
-              ))}
+                )
+              })}
             </div>
           </div>
         </div>
