@@ -21,19 +21,17 @@ export default function HomePage() {
       <section className="relative z-10 mx-auto max-w-7xl px-6 pb-0 pt-12 sm:px-8 sm:pt-16">
         <div className="grid gap-0 lg:grid-cols-2">
           {/* Left: Photo */}
-          <div className="relative flex items-center justify-center py-16 lg:py-24" style={{ maxWidth: '400px', width: '100%' }}>
+          <div className="relative flex items-center justify-center py-16 lg:py-24">
             {/* Subtle background gradient */}
             <div className="absolute inset-0 bg-gradient-to-br from-muted/20 via-muted/10 to-transparent dark:from-muted/15 dark:via-muted/5 dark:to-transparent" />
-            <div className="group relative z-10 shrink-0 overflow-hidden rounded-2xl shadow-2xl transition-all duration-500 hover:shadow-primary/20 hover:shadow-2xl" data-image-container style={{ width: '400px', height: '500px', maxWidth: '400px', minWidth: '400px', flexShrink: 0 }}>
+            <div className="group relative z-10 h-[500px] w-[400px] overflow-hidden rounded-2xl shadow-2xl transition-all duration-500 hover:shadow-primary/20 hover:shadow-2xl">
               <div className="absolute inset-0 z-10 bg-gradient-to-t from-background/20 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
               <Image
                 src="/images/gemini-20generated-20image.png"
                 alt="Taylor Bush"
                 fill
-                sizes="400px"
                 className="object-cover transition-transform duration-700 group-hover:scale-105"
                 priority
-                style={{ objectFit: 'cover', position: 'absolute', width: '100%', height: '100%' }}
               />
             </div>
           </div>
@@ -101,15 +99,14 @@ export default function HomePage() {
 
             {/* Right: Photo */}
             <div className="flex items-center justify-center">
-              <div className="group relative shrink-0 overflow-hidden rounded-2xl shadow-2xl transition-all duration-500 hover:shadow-primary/20 hover:shadow-2xl border border-red-500" data-image-container style={{ width: '400px', height: '500px', maxWidth: '400px', minWidth: '400px', flexShrink: 0 }}>
+              <div className="group relative h-[500px] w-[400px] shrink-0 overflow-hidden rounded-2xl shadow-2xl transition-all duration-500 hover:shadow-primary/20 hover:shadow-2xl border border-red-500">
                 <div className="absolute inset-0 z-10 bg-gradient-to-t from-background/20 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
                 <Image
                   src="/images/a757fa8e-ef67-400b-85b5-839726b854fc-1-105-c.jpeg"
                   alt="Taylor Bush"
                   fill
-                  sizes="400px"
+                  sizes="(min-width: 1024px) 400px, 90vw"
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
-                  style={{ objectFit: 'cover' }}
                 />
               </div>
             </div>
