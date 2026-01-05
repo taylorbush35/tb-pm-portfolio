@@ -24,14 +24,13 @@ export default function HomePage() {
           <div className="relative flex items-center justify-center py-16 lg:py-24 lg:col-span-1">
             {/* Subtle background gradient */}
             <div className="absolute inset-0 bg-gradient-to-br from-muted/20 via-muted/10 to-transparent dark:from-muted/15 dark:via-muted/5 dark:to-transparent" />
-            <div className="group relative z-10 h-[500px] w-[400px] shrink-0 overflow-hidden rounded-2xl shadow-2xl transition-all duration-500 hover:shadow-primary/20 hover:shadow-2xl">
+            <div className="group relative z-10 h-[650px] w-[500px] shrink-0 overflow-hidden rounded-2xl shadow-2xl transition-all duration-500 hover:shadow-primary/20 hover:shadow-2xl">
               <div className="absolute inset-0 z-10 bg-gradient-to-t from-background/20 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
               <Image
                 src="/images/gemini-20generated-20image.png"
                 alt="Taylor Bush"
-                width={400}
-                height={500}
-                className="object-cover transition-transform duration-700 group-hover:scale-105"
+                fill
+                className="object-cover object-center object-top transition-transform duration-700 group-hover:scale-105"
                 priority
               />
             </div>
@@ -100,7 +99,7 @@ export default function HomePage() {
 
             {/* Right: Photo */}
             <div className="flex items-center justify-center lg:col-span-1">
-              <div className="group relative h-[500px] w-[400px] shrink-0 overflow-hidden rounded-2xl shadow-2xl transition-all duration-500 hover:shadow-primary/20 hover:shadow-2xl border border-red-500">
+              <div className="group relative h-[500px] w-[400px] shrink-0 overflow-hidden rounded-2xl shadow-2xl transition-all duration-500 hover:shadow-primary/20 hover:shadow-2xl">
                 <div className="absolute inset-0 z-10 bg-gradient-to-t from-background/20 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
                 <Image
                   src="/images/a757fa8e-ef67-400b-85b5-839726b854fc-1-105-c.jpeg"
