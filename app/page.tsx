@@ -98,15 +98,16 @@ export default function HomePage() {
             </div>
 
             {/* Right: Photo */}
-            <div className="flex items-center justify-center w-full max-w-[400px] mx-auto">
-              <div className="group relative h-[500px] w-[400px] max-w-[400px] shrink-0 flex-shrink-0 overflow-hidden rounded-2xl shadow-2xl transition-all duration-500 hover:shadow-primary/20 hover:shadow-2xl border border-red-500">
+            <div className="flex items-center justify-center w-full max-w-[400px] mx-auto lg:max-w-none">
+              <div className="group relative h-[500px] w-[400px] max-w-[400px] min-w-[400px] shrink-0 flex-shrink-0 overflow-hidden rounded-2xl shadow-2xl transition-all duration-500 hover:shadow-primary/20 hover:shadow-2xl border border-red-500" style={{ width: '400px', height: '500px', maxWidth: '400px', minWidth: '400px' }}>
                 <div className="absolute inset-0 z-10 bg-gradient-to-t from-background/20 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
                 <Image
                   src="/images/a757fa8e-ef67-400b-85b5-839726b854fc-1-105-c.jpeg"
                   alt="Taylor Bush"
-                  fill
-                  sizes="400px"
+                  width={400}
+                  height={500}
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                 />
               </div>
             </div>
