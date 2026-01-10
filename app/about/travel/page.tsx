@@ -213,19 +213,21 @@ export default function TravelPage() {
                     transform: "scale(1.1)",
                   }}
                 />
+                {/* Dark overlay for better text visibility */}
+                <div className="absolute inset-0 bg-black/50 dark:bg-black/60" />
                 {/* Blur overlay for extra blur effect */}
-                <div className="absolute inset-0 backdrop-blur-md bg-background/40 dark:bg-background/30" />
+                <div className="absolute inset-0 backdrop-blur-md bg-background/50 dark:bg-background/40" />
                 {/* Subtle gradient overlay */}
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-accent/10 opacity-60 dark:from-accent/10 dark:to-primary/10" />
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-accent/10 opacity-40 dark:from-accent/10 dark:to-primary/10" />
                 <div className="relative z-10 flex h-full flex-col items-center justify-center p-6">
                   <div className="mb-2 text-center">
-                    <h3 className="text-xl font-bold text-foreground drop-shadow-lg dark:text-foreground">{destination.name}</h3>
-                    <p className="mt-1 text-sm font-medium text-primary drop-shadow-md dark:text-accent">{destination.year}</p>
+                    <h3 className="text-xl font-bold text-white drop-shadow-lg dark:text-white">{destination.name}</h3>
+                    <p className="mt-1 text-sm font-medium text-primary-foreground drop-shadow-md dark:text-primary-foreground">{destination.year}</p>
                   </div>
-                  <div className="mt-4 rounded-lg bg-primary/20 backdrop-blur-sm px-4 py-2 text-sm font-medium italic text-primary drop-shadow-md dark:bg-accent/20 dark:text-accent">
+                  <div className="mt-4 rounded-lg bg-primary/30 backdrop-blur-sm border border-primary/30 px-4 py-2 text-sm font-medium italic text-white drop-shadow-lg dark:bg-accent/30 dark:border-accent/30 dark:text-white">
                     Flights booked...
                   </div>
-                  <p className="mt-3 text-center text-xs text-foreground/90 drop-shadow-sm dark:text-foreground/80">{destination.highlight}</p>
+                  <p className="mt-3 text-center text-xs text-white/90 drop-shadow-md dark:text-white/80">{destination.highlight}</p>
                 </div>
               </div>
             ))}
