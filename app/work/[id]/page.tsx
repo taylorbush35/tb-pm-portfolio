@@ -63,7 +63,7 @@ const projectData: Record<string, any> = {
     ],
   },
   "care-onboarding-enhancement": {
-    title: "Care Onboarding Enhancement",
+    title: "CMS Onboarding",
     year: "2024-2025",
     role: "Product Manager",
     tags: ["Product Strategy", "Enterprise", "AI Integration", "B2B"],

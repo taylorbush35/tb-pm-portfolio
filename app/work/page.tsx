@@ -14,7 +14,7 @@ const projects = [
   },
   {
     id: "care-onboarding-enhancement",
-    title: "Care Onboarding Enhancement",
+    title: "CMS Onboarding",
     description:
       "Unified the Care Onboarding portal into the CMS, eliminating legacy dependencies and creating a seamless knowledge base management experience",
     tags: ["Technical Debt", "Workspace Consolidation", "AI Integration"],
