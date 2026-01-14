@@ -8,7 +8,7 @@ import { ThemeToggle } from "./theme-toggle"
 const navItems = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About Me" },
-  { href: "/work", label: "My Work" },
+  { href: "/work", label: "Other Cool Stuff" },
 ]
 
 export function Navigation() {

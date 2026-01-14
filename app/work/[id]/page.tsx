@@ -90,9 +90,9 @@ export default async function ProjectPage({ params }: { params: Promise<{ id: st
 
       <div className="mx-auto max-w-4xl px-6 py-16 sm:px-8">
         <Button asChild variant="ghost" className="mb-8 -ml-4">
-          <Link href="/work">
+          <Link href="/about#other-cool-stuff">
             <ArrowLeft className="mr-2 size-4" />
-            Back to Work
+            Back to My Work
           </Link>
         </Button>
 
@@ -170,7 +170,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ id: st
         {/* CTA */}
         <div className="flex justify-center border-t border-border/50 pt-12">
           <Button asChild size="lg">
-            <Link href="/work">
+            <Link href="/about#other-cool-stuff">
               View More Projects
               <ArrowLeft className="ml-2 size-4 rotate-180" />
             </Link>

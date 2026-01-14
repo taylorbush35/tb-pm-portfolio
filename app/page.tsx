@@ -94,7 +94,7 @@ export default function HomePage() {
                     className="rounded-full px-8 transition-all duration-300 hover:shadow-lg hover:shadow-primary/20"
                   >
                     <Link href="/work">
-                      My Work
+                      Other Cool Stuff
                     </Link>
                   </Button>
                 </div>

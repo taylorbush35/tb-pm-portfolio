@@ -118,10 +118,10 @@ export default function TravelPage() {
       <Navigation />
 
       <div className="mx-auto max-w-7xl px-6 py-16 sm:px-8 sm:py-20">
-        <Link href="/about">
+        <Link href="/work#outside-the-roadmap">
           <Button variant="ghost" className="mb-8 -ml-2 gap-2">
             <ArrowLeft className="size-4" />
-            Back to About
+            Back to Outside the Roadmap
           </Button>
         </Link>
 
