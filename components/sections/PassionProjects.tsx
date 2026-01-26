@@ -11,7 +11,7 @@ const passionProjects = [
     tags: ["Product", "UX", "Data", "Engineering"],
     year: "2026",
     impact: "Built for fun and learning",
-    liveUrl: "https://f1-2026-calendar.vercel.app",
+    liveUrl: "https://f1-2026-calendar-theta.vercel.app/",
   },
   {
     id: "passion-project-2",
