@@ -145,6 +145,18 @@ export default async function ProjectPage({ params }: { params: Promise<{ id: st
           <p className="text-pretty leading-relaxed text-muted-foreground">{project.overview}</p>
         </section>
 
+        {id === "passion-project-1" && (
+          <section className="mb-12">
+            <div className="overflow-hidden rounded-lg border-2 border-[#4527A0] bg-secondary/30">
+              <img
+                src="/F1 Calendar Gif.gif"
+                alt="F1 2026 Interactive Calendar - showing the interactive map interface with race locations and details"
+                className="w-full"
+              />
+            </div>
+          </section>
+        )}
+
         {id === "agentic-help-assistant" && (
           <section className="mb-12">
             <div className="overflow-hidden rounded-lg border-2 border-[#4527A0] bg-secondary/30">
