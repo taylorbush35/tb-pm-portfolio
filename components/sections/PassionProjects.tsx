@@ -7,7 +7,7 @@ const passionProjects = [
   {
     id: "passion-project-1",
     title: "F1 2026 Interactive Calendar",
-    description: "An interactive Formula 1 race calendar designed to make complex season data—time zones, sprint weekends, and global circuits—easy to explore and understand. Built with a product-first mindset, prioritizing clarity, data accuracy, and fan experience.",
+    description: "An interactive Formula 1 race calendar that makes complex season data easy to explore. Built with a product-first mindset, prioritizing clarity and fan experience.",
     tags: ["Product", "UX", "Data", "Engineering"],
     year: "2026",
     impact: "Built for fun and learning",
@@ -49,45 +49,45 @@ export function PassionProjects() {
             return (
               <div key={project.id} className="relative">
                 <Link href={`/work/${project.id}`}>
-                  <Card className="group h-full cursor-pointer border-border/50 p-5 transition-all hover:border-primary/50 hover:shadow-lg hover:shadow-primary/10 dark:hover:shadow-primary/20">
-                    <div className="mb-2.5 flex items-start justify-between">
-                      <span className="rounded-full bg-secondary px-3 py-1 text-xs font-medium text-muted-foreground">
+                  <Card className="group h-full cursor-pointer border-border/50 p-3 transition-all hover:border-primary/50 hover:shadow-lg hover:shadow-primary/10 dark:hover:shadow-primary/20">
+                    <div className="mb-1.5 flex items-start justify-between">
+                      <span className="rounded-full bg-secondary px-2.5 py-0.5 text-xs font-medium text-muted-foreground">
                         {project.year}
                       </span>
-                      <ArrowRight className="size-4 text-muted-foreground transition-transform group-hover:translate-x-1 group-hover:text-primary" />
+                      <ArrowRight className="size-3.5 text-muted-foreground transition-transform group-hover:translate-x-1 group-hover:text-primary" />
                     </div>
 
-                    <h3 className="mb-2 text-balance text-xl font-semibold leading-tight transition-colors group-hover:text-primary">
+                    <h3 className="mb-1 text-balance text-lg font-semibold leading-tight transition-colors group-hover:text-primary">
                       {project.title}
                     </h3>
 
-                    <p className="mb-3 text-pretty text-sm leading-relaxed text-muted-foreground">
+                    <p className="mb-2 text-pretty text-sm leading-snug text-muted-foreground">
                       {project.description}
                     </p>
 
-                    <div className="mb-3 flex flex-wrap gap-2">
+                    <div className="mb-2 flex flex-wrap gap-1.5">
                       {project.tags.map((tag) => (
-                        <span key={tag} className="rounded-full bg-secondary px-2.5 py-0.5 text-xs font-medium">
+                        <span key={tag} className="rounded-full bg-secondary px-2 py-0.5 text-xs font-medium">
                           {tag}
                         </span>
                       ))}
                     </div>
 
-                    <div className="border-t border-border/50 pt-3 mb-3 text-xs font-medium text-accent">
+                    <div className="border-t border-border/50 pt-2 mb-0 text-xs font-medium text-accent">
                       {project.impact}
                     </div>
 
                     {project.liveUrl && (
-                      <div onClick={(e) => e.stopPropagation()}>
+                      <div onClick={(e) => e.stopPropagation()} className="-mt-2.5">
                         <Button
                           asChild
                           variant="default"
                           size="sm"
-                          className="h-9 w-full justify-between text-xs font-medium bg-primary text-primary-foreground hover:bg-primary/90 dark:hover:bg-primary/80"
+                          className="h-7 w-full justify-between text-xs font-medium bg-primary text-primary-foreground hover:bg-primary/90 dark:hover:bg-primary/80"
                         >
                           <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="group/btn">
                             <span>View Live Calendar</span>
-                            <ArrowUpRight className="ml-1.5 size-3.5 opacity-70 transition-opacity group-hover/btn:opacity-100" />
+                            <ArrowUpRight className="ml-1.5 size-3 opacity-70 transition-opacity group-hover/btn:opacity-100" />
                           </a>
                         </Button>
                       </div>
@@ -101,30 +101,30 @@ export function PassionProjects() {
           // Other projects show coming soon
           return (
             <div key={project.id} className="relative">
-              <Card className="h-full border-border/50 p-6 overflow-hidden">
+              <Card className="h-full border-border/50 p-3 overflow-hidden">
                 <div className="blur-sm">
-                  <div className="mb-3 flex items-start justify-between">
-                    <span className="rounded-full bg-secondary px-3 py-1 text-xs font-medium text-muted-foreground">
+                  <div className="mb-1.5 flex items-start justify-between">
+                    <span className="rounded-full bg-secondary px-2.5 py-0.5 text-xs font-medium text-muted-foreground">
                       {project.year}
                     </span>
-                    <ArrowRight className="size-4 text-muted-foreground" />
+                    <ArrowRight className="size-3.5 text-muted-foreground" />
                   </div>
 
-                  <h3 className="mb-3 text-balance text-xl font-semibold leading-tight">{project.title}</h3>
+                  <h3 className="mb-1 text-balance text-lg font-semibold leading-tight">{project.title}</h3>
 
-                  <p className="mb-4 text-pretty text-sm leading-relaxed text-muted-foreground">
+                  <p className="mb-2 text-pretty text-sm leading-snug text-muted-foreground">
                     {project.description}
                   </p>
 
-                  <div className="mb-4 flex flex-wrap gap-2">
+                  <div className="mb-2 flex flex-wrap gap-1.5">
                     {project.tags.map((tag) => (
-                      <span key={tag} className="rounded-full bg-secondary px-2.5 py-0.5 text-xs font-medium">
+                      <span key={tag} className="rounded-full bg-secondary px-2 py-0.5 text-xs font-medium">
                         {tag}
                       </span>
                     ))}
                   </div>
 
-                  <div className="border-t border-border/50 pt-4 text-xs font-medium text-accent">
+                  <div className="border-t border-border/50 pt-2 mb-2 text-xs font-medium text-accent">
                     {project.impact}
                   </div>
                 </div>

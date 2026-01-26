@@ -42,29 +42,29 @@ export function ProductWork() {
       <div className="relative grid gap-6 sm:grid-cols-2">
         {projects.map((project) => (
           <Link key={project.id} href={`/work/${project.id}`}>
-            <Card className="group h-full cursor-pointer border-border/50 p-6 transition-all hover:border-primary/50 hover:shadow-lg hover:shadow-primary/10 dark:hover:shadow-primary/20">
-              <div className="mb-3 flex items-start justify-between">
-                <span className="rounded-full bg-secondary px-3 py-1 text-xs font-medium text-muted-foreground">
+            <Card className="group h-full cursor-pointer border-border/50 p-3 transition-all hover:border-primary/50 hover:shadow-lg hover:shadow-primary/10 dark:hover:shadow-primary/20">
+              <div className="mb-1.5 flex items-start justify-between">
+                <span className="rounded-full bg-secondary px-2.5 py-0.5 text-xs font-medium text-muted-foreground">
                   {project.year}
                 </span>
-                <ArrowRight className="size-4 text-muted-foreground transition-transform group-hover:translate-x-1 group-hover:text-primary" />
+                <ArrowRight className="size-3.5 text-muted-foreground transition-transform group-hover:translate-x-1 group-hover:text-primary" />
               </div>
 
-              <h3 className="mb-3 text-balance text-xl font-semibold leading-tight transition-colors group-hover:text-primary">
+              <h3 className="mb-1 text-balance text-lg font-semibold leading-tight transition-colors group-hover:text-primary">
                 {project.title}
               </h3>
 
-              <p className="mb-4 text-pretty text-sm leading-relaxed text-muted-foreground">{project.description}</p>
+              <p className="mb-2 text-pretty text-sm leading-snug text-muted-foreground">{project.description}</p>
 
-              <div className="mb-4 flex flex-wrap gap-2">
+              <div className="mb-2 flex flex-wrap gap-1.5">
                 {project.tags.map((tag) => (
-                  <span key={tag} className="rounded-full bg-secondary px-2.5 py-0.5 text-xs font-medium">
+                  <span key={tag} className="rounded-full bg-secondary px-2 py-0.5 text-xs font-medium">
                     {tag}
                   </span>
                 ))}
               </div>
 
-              <div className="border-t border-border/50 pt-4 text-xs font-medium text-accent">{project.impact}</div>
+              <div className="border-t border-border/50 pt-2 mb-2 text-xs font-medium text-accent">{project.impact}</div>
             </Card>
           </Link>
         ))}
