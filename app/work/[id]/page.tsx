@@ -78,11 +78,32 @@ const projectData: Record<string, any> = {
       "Platform scalability - Consolidated legacy systems and established a foundation for future Care product enhancements",
     ],
   },
+  "passion-project-1": {
+    title: "F1 2026 Interactive Calendar",
+    year: "2025–2026",
+    role: "Product Designer & Engineer (Independent Project)",
+    tags: ["Product", "UX", "Data", "Engineering"],
+    overview:
+      "Formula 1 calendars are incredibly detailed, but that level of depth can also be overwhelming. This project was built around a simple idea: sometimes fans don't need every session breakdown or nested detail, they just want a clear snapshot of the race schedule so they can stay informed without friction.",
+    challenge: `Many existing F1 calendar tools require fans to click through multiple layers of pages to understand a single race weekend. While powerful, this approach can make it harder to quickly answer basic questions like when a race is happening or how a weekend is structured - especially for fans who want clarity, not complexity.`,
+    solution: `Built an interactive calendar experience that models race weekends as structured data rather than static content. Designed the UI to emphasize chronological flow, scanability, and clear visual hierarchy, with sprint weekends and special formats clearly distinguished. Prioritized data correctness and maintainability, shipping the experience as a live, production-ready application.`,
+    outcome: [
+      "Shipped a fully deployed, live product with CI/CD from GitHub to Vercel",
+      "Created a fan-friendly calendar that improves clarity without sacrificing detail",
+      "Demonstrated end-to-end product thinking: problem framing → data modeling → UX → delivery",
+      "Established a scalable foundation for future features and iteration",
+    ],
+  },
 }
 
 export default async function ProjectPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params
   const project = projectData[id] || projectData["ai-talent-intelligence"]
+  
+  // Determine back link based on project type
+  const isPassionProject = id.startsWith("passion-project")
+  const backLink = isPassionProject ? "/about#passion-projects" : "/about#other-cool-stuff"
+  const backLabel = isPassionProject ? "Back to Passion Projects" : "Back to My Work"
 
   return (
     <div className="min-h-screen">
@@ -90,9 +111,9 @@ export default async function ProjectPage({ params }: { params: Promise<{ id: st
 
       <div className="mx-auto max-w-4xl px-6 py-16 sm:px-8">
         <Button asChild variant="ghost" className="mb-8 -ml-4">
-          <Link href="/about#other-cool-stuff">
+          <Link href={backLink}>
             <ArrowLeft className="mr-2 size-4" />
-            Back to My Work
+            {backLabel}
           </Link>
         </Button>
 
@@ -170,7 +191,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ id: st
         {/* CTA */}
         <div className="flex justify-center border-t border-border/50 pt-12">
           <Button asChild size="lg">
-            <Link href="/about#other-cool-stuff">
+            <Link href={backLink}>
               View More Projects
               <ArrowLeft className="ml-2 size-4 rotate-180" />
             </Link>
