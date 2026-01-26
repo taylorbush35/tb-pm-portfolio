@@ -93,10 +93,10 @@ export default function PhotographyPage() {
 
       <div className="mx-auto max-w-7xl px-6 py-16 sm:px-8 sm:py-20">
         <div className="mb-12">
-          <Link href="/work#outside-the-roadmap">
+          <Link href="/about">
             <Button variant="ghost" size="sm" className="mb-6 -ml-2">
               <ArrowLeft className="mr-2 size-4" />
-              Back to Outside the Roadmap
+              Back to About
             </Button>
           </Link>
 
