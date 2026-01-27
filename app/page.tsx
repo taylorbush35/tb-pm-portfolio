@@ -91,7 +91,7 @@ export default function HomePage() {
                     className="group flex flex-col items-center justify-center space-y-2 rounded-xl border-2 border-border bg-muted/30 p-4 transition-all duration-300 hover:border-primary/50 hover:bg-primary/10 hover:shadow-lg hover:shadow-primary/10"
                   >
                     <p className="text-center text-sm font-medium text-foreground transition-colors duration-300 group-hover:text-primary">
-                      My Work
+                      Other Cool Stuff
                     </p>
                   </Link>
                 </div>
