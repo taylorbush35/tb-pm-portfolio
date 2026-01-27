@@ -1,7 +1,7 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Navigation } from "@/components/navigation"
-import { Linkedin, FileDown } from "lucide-react"
+import { Mail, Linkedin, FileDown } from "lucide-react"
 import Image from "next/image"
 
 export default function HomePage() {
@@ -29,8 +29,9 @@ export default function HomePage() {
               <Image
                 src="/images/gemini-20generated-20image.png"
                 alt="Taylor Bush"
-                fill
-                className="object-cover object-center object-top transition-transform duration-700 group-hover:scale-105"
+                width={400}
+                height={500}
+                className="object-contain transition-transform duration-700 group-hover:scale-105"
                 priority
               />
             </div>
@@ -76,27 +77,23 @@ export default function HomePage() {
                 </p>
               </div>
               <div className="border-t border-border pt-6">
-                <div className="flex flex-wrap items-center justify-center gap-4">
-                  <Button
-                    asChild
-                    size="lg"
-                    variant="default"
-                    className="rounded-full px-8 transition-all duration-300 hover:shadow-lg hover:shadow-primary/20"
+                <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                  <Link
+                    href="/about"
+                    className="group flex flex-col items-center justify-center space-y-2 rounded-xl border-2 border-border bg-muted/30 p-4 transition-all duration-300 hover:border-primary/50 hover:bg-primary/10 hover:shadow-lg hover:shadow-primary/10"
                   >
-                    <Link href="/about">
+                    <p className="text-center text-sm font-medium text-foreground transition-colors duration-300 group-hover:text-primary">
                       Learn More About Me
-                    </Link>
-                  </Button>
-                  <Button
-                    asChild
-                    size="lg"
-                    variant="default"
-                    className="rounded-full px-8 transition-all duration-300 hover:shadow-lg hover:shadow-primary/20"
+                    </p>
+                  </Link>
+                  <Link
+                    href="/work"
+                    className="group flex flex-col items-center justify-center space-y-2 rounded-xl border-2 border-border bg-muted/30 p-4 transition-all duration-300 hover:border-primary/50 hover:bg-primary/10 hover:shadow-lg hover:shadow-primary/10"
                   >
-                    <Link href="/work">
-                      Other Cool Stuff
-                    </Link>
-                  </Button>
+                    <p className="text-center text-sm font-medium text-foreground transition-colors duration-300 group-hover:text-primary">
+                      My Work
+                    </p>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -137,6 +134,17 @@ export default function HomePage() {
               variant="default"
               className="rounded-full px-8 transition-all duration-300 hover:shadow-lg hover:shadow-primary/20"
             >
+              <a href="mailto:taylor.bush@example.com">
+                <Mail className="mr-2 size-4 transition-transform duration-300 group-hover:scale-110" />
+                Get in Touch
+              </a>
+            </Button>
+            <Button
+              asChild
+              size="lg"
+              variant="outline"
+              className="rounded-full transition-all duration-300 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/10"
+            >
               <a href="https://www.linkedin.com/in/taylorbush35/" target="_blank" rel="noopener noreferrer">
                 <Linkedin className="mr-2 size-4 transition-transform duration-300 group-hover:scale-110" />
                 LinkedIn
@@ -145,10 +153,10 @@ export default function HomePage() {
             <Button
               asChild
               size="lg"
-              variant="default"
-              className="rounded-full px-8 transition-all duration-300 hover:shadow-lg hover:shadow-primary/20"
+              variant="outline"
+              className="rounded-full transition-all duration-300 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/10"
             >
-              <a href="/Bush, Taylor Resume .pdf" download="Bush, Taylor Resume .pdf">
+              <a href="/resume.pdf" download>
                 <FileDown className="mr-2 size-4 transition-transform duration-300 group-hover:scale-110" />
                 Resume
               </a>
@@ -156,6 +164,11 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* Tailwind verification badge */}
+      <div className="fixed bottom-4 right-4 z-[9999] rounded bg-primary px-3 py-2 text-xs font-semibold text-primary-foreground">
+        TAILWIND OK
+      </div>
     </div>
   )
 }
