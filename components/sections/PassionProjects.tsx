@@ -25,7 +25,7 @@ const passionProjects = [
 
 export function PassionProjects() {
   return (
-    <div id="passion-projects" className="relative mb-24 rounded-2xl py-16 sm:py-20">
+    <div id="passion-projects" className="relative mb-8 rounded-2xl py-16 sm:py-20">
       {/* Subtle background gradient - mode specific, fades naturally */}
       <div className="absolute inset-0 rounded-2xl bg-gradient-to-b from-muted/30 via-muted/15 to-transparent dark:from-muted/20 dark:via-muted/10 dark:to-transparent" />
       {/* Subtle accent gradient overlay - enhanced purple in both modes */}

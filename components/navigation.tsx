@@ -7,7 +7,7 @@ import { ThemeToggle } from "./theme-toggle"
 
 const navItems = [
   { href: "/about", label: "About Me" },
-  { href: "/work", label: "Other Cool Stuff" },
+  { href: "/work", label: "Product & Beyond" },
 ]
 
 export function Navigation() {

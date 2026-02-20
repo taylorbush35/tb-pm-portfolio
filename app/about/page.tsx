@@ -168,7 +168,7 @@ export default function AboutPage() {
 
       </section>
 
-      <section className="relative py-20">
+      <section className="relative pt-12 pb-20">
         {/* Subtle gradient overlay */}
         <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5 dark:from-primary/10 dark:to-accent/10" />
 
