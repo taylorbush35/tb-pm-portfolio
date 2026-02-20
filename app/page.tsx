@@ -1,7 +1,5 @@
 import Link from "next/link"
-import { Button } from "@/components/ui/button"
 import { Navigation } from "@/components/navigation"
-import { Mail, Linkedin, FileDown } from "lucide-react"
 import Image from "next/image"
 
 export default function HomePage() {
@@ -114,55 +112,10 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="relative py-20">
-        {/* Subtle gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5 dark:from-primary/10 dark:to-accent/10" />
-
-        <div className="relative z-10 mx-auto max-w-4xl px-6 text-center sm:px-8">
-          <h2 className="mb-4 text-balance text-3xl font-bold tracking-tight transition-colors duration-300 hover:text-primary/80 sm:text-4xl">
-            Always excited for the next challenge
-          </h2>
-          <p className="mb-8 text-pretty text-lg text-muted-foreground transition-colors duration-300 hover:text-foreground/80">
-            — or the next flight out.
-          </p>
-
-          <div className="flex flex-wrap items-center justify-center gap-4">
-            <Button
-              asChild
-              size="lg"
-              variant="default"
-              className="rounded-full px-8 transition-all duration-300 hover:shadow-lg hover:shadow-primary/20"
-            >
-              <a href="mailto:taylor.bush@example.com">
-                <Mail className="mr-2 size-4 transition-transform duration-300 group-hover:scale-110" />
-                Get in Touch
-              </a>
-            </Button>
-            <Button
-              asChild
-              size="lg"
-              variant="outline"
-              className="rounded-full transition-all duration-300 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/10"
-            >
-              <a href="https://www.linkedin.com/in/taylorbush35/" target="_blank" rel="noopener noreferrer">
-                <Linkedin className="mr-2 size-4 transition-transform duration-300 group-hover:scale-110" />
-                LinkedIn
-              </a>
-            </Button>
-            <Button
-              asChild
-              size="lg"
-              variant="outline"
-              className="rounded-full transition-all duration-300 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/10"
-            >
-              <a href="/resume.pdf" download>
-                <FileDown className="mr-2 size-4 transition-transform duration-300 group-hover:scale-110" />
-                Resume
-              </a>
-            </Button>
-          </div>
-        </div>
-      </section>
+      {/* Tailwind verification badge */}
+      <div className="fixed bottom-4 right-4 z-[9999] rounded bg-primary px-3 py-2 text-xs font-semibold text-primary-foreground">
+        TAILWIND OK
+      </div>
     </div>
   )
 }
