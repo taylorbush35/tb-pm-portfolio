@@ -209,7 +209,7 @@ export default function AboutPage() {
               variant="default"
               className="rounded-full px-8 transition-all duration-300 hover:bg-primary/80 hover:shadow-lg hover:shadow-primary/20"
             >
-              <a href="/resume.pdf" download>
+              <a href="/Taylor Bush Resume.jpg" download>
                 <FileDown className="mr-2 size-4 transition-transform duration-300 group-hover:scale-110" />
                 Resume
               </a>
