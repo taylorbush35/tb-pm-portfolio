@@ -28,7 +28,7 @@ export default function AboutPage() {
           <div className="flex flex-col justify-center space-y-6">
             <div>
               <h1 className="mb-3 text-balance text-5xl font-bold tracking-tight transition-colors duration-300 hover:text-primary/80 lg:text-6xl">
-                WHO IS TAYLOR?
+                TAYLOR BUSH
               </h1>
               <p className="text-pretty text-lg font-medium text-muted-foreground transition-colors duration-300 hover:text-foreground/80">
                 Building products by bringing clarity, direction, and a steady hand to the moments that feel uncertain.
