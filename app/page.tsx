@@ -29,9 +29,8 @@ export default function HomePage() {
               <Image
                 src="/images/gemini-20generated-20image.png"
                 alt="Taylor Bush"
-                width={400}
-                height={500}
-                className="object-contain transition-transform duration-700 group-hover:scale-105"
+                fill
+                className="object-cover transition-transform duration-700 group-hover:scale-105"
                 priority
               />
             </div>
@@ -164,11 +163,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
-      {/* Tailwind verification badge */}
-      <div className="fixed bottom-4 right-4 z-[9999] rounded bg-primary px-3 py-2 text-xs font-semibold text-primary-foreground">
-        TAILWIND OK
-      </div>
     </div>
   )
 }
