@@ -185,9 +185,9 @@ export default function AboutPage() {
               asChild
               size="lg"
               variant="default"
-              className="rounded-full px-8 transition-all duration-300 hover:shadow-lg hover:shadow-primary/20"
+              className="rounded-full px-8 transition-all duration-300 hover:bg-primary/80 hover:shadow-lg hover:shadow-primary/20"
             >
-              <a href="mailto:taylor.bush@example.com">
+              <a href="mailto:taylorbush35@gmail.com">
                 <Mail className="mr-2 size-4 transition-transform duration-300 group-hover:scale-110" />
                 Get in Touch
               </a>
@@ -195,8 +195,8 @@ export default function AboutPage() {
             <Button
               asChild
               size="lg"
-              variant="outline"
-              className="rounded-full transition-all duration-300 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/10"
+              variant="default"
+              className="rounded-full px-8 transition-all duration-300 hover:bg-primary/80 hover:shadow-lg hover:shadow-primary/20"
             >
               <a href="https://www.linkedin.com/in/taylorbush35/" target="_blank" rel="noopener noreferrer">
                 <Linkedin className="mr-2 size-4 transition-transform duration-300 group-hover:scale-110" />
@@ -206,8 +206,8 @@ export default function AboutPage() {
             <Button
               asChild
               size="lg"
-              variant="outline"
-              className="rounded-full transition-all duration-300 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/10"
+              variant="default"
+              className="rounded-full px-8 transition-all duration-300 hover:bg-primary/80 hover:shadow-lg hover:shadow-primary/20"
             >
               <a href="/resume.pdf" download>
                 <FileDown className="mr-2 size-4 transition-transform duration-300 group-hover:scale-110" />
