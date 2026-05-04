@@ -22,7 +22,7 @@ export function OutsideTheRoadmap() {
               Travel Enthusiast
             </h3>
             <p className="text-pretty text-sm leading-relaxed text-muted-foreground transition-colors duration-300 group-hover:text-foreground/80">
-              Always planning the next adventure. 9 countries and counting.
+              Always planning the next adventure. 13 countries and counting.
             </p>
           </Card>
         </Link>
