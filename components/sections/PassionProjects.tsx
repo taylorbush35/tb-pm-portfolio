@@ -1,25 +1,36 @@
 import Link from "next/link"
 import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { ArrowRight, ArrowUpRight } from "lucide-react"
+import { ArrowRight, ArrowUpRight, Plane } from "lucide-react"
 
-const passionProjects = [
+type PassionProject = {
+  id: string
+  title: string
+  description: string
+  year: string
+  impact: string
+  liveUrl?: string
+  /** Shown unblurred with a WIP status bar while the build is active */
+  status?: "in-flight"
+}
+
+const passionProjects: PassionProject[] = [
   {
     id: "passion-project-1",
     title: "F1 2026 Interactive Calendar",
     description: "An interactive Formula 1 race calendar that makes complex season data easy to explore. Built with a product-first mindset, prioritizing clarity and fan experience.",
-    tags: ["Product", "UX", "Data", "Engineering"],
     year: "2026",
     impact: "Built for fun and learning",
     liveUrl: "https://f1-2026-calendar-theta.vercel.app/",
   },
   {
     id: "passion-project-2",
-    title: "Passion Project 2",
-    description: "Another side project exploring new technologies",
-    tags: ["Experimentation", "Design"],
-    year: "2024",
-    impact: "Exploring new approaches",
+    title: "Travel Site",
+    description:
+      "A shareable travel site that turns places I've been into one guide—maps, recommendations, and packing. Built with a product-first mindset, prioritizing clarity and reuse.",
+    year: "2026",
+    impact: "Shipping one destination at a time",
+    status: "in-flight",
   },
 ]
 
@@ -42,14 +53,13 @@ export function PassionProjects() {
 
       <div className="relative grid gap-6 sm:grid-cols-2">
         {passionProjects.map((project) => {
-          // First project (F1 2026) is clickable, others show coming soon
-          const isClickable = project.id === "passion-project-1"
-          
-          if (isClickable) {
+          const isCaseStudy = project.id === "passion-project-1"
+
+          if (isCaseStudy) {
             return (
-              <div key={project.id} className="relative">
-                <Link href={`/work/${project.id}`}>
-                  <Card className="group h-full cursor-pointer border-border/50 p-3 transition-all hover:border-primary/50 hover:shadow-lg hover:shadow-primary/10 dark:hover:shadow-primary/20">
+              <div key={project.id} className="relative h-full min-h-0">
+                <Link href={`/work/${project.id}`} className="block h-full min-h-0">
+                  <Card className="group flex h-full min-h-0 cursor-pointer flex-col border-border/50 p-3 transition-all hover:border-primary/50 hover:shadow-lg hover:shadow-primary/10 dark:hover:shadow-primary/20">
                     <div className="mb-1.5 flex items-start justify-between">
                       <span className="rounded-full bg-secondary px-2.5 py-0.5 text-xs font-medium text-muted-foreground">
                         {project.year}
@@ -61,17 +71,9 @@ export function PassionProjects() {
                       {project.title}
                     </h3>
 
-                    <p className="mb-2 text-pretty text-sm leading-snug text-muted-foreground">
+                    <p className="mb-2 min-h-0 flex-1 text-pretty text-sm leading-snug text-muted-foreground">
                       {project.description}
                     </p>
-
-                    <div className="mb-2 flex flex-wrap gap-1.5">
-                      {project.tags.map((tag) => (
-                        <span key={tag} className="rounded-full bg-secondary px-2 py-0.5 text-xs font-medium">
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
 
                     <div className="border-t border-border/50 pt-2 mb-0 text-xs font-medium text-accent">
                       {project.impact}
@@ -97,7 +99,38 @@ export function PassionProjects() {
               </div>
             )
           }
-          
+
+          if (project.status === "in-flight") {
+            return (
+              <Card key={project.id} className="flex h-full min-h-0 flex-col border-border/50 p-3">
+                <div className="mb-1.5 flex items-start justify-between">
+                  <span className="rounded-full bg-secondary px-2.5 py-0.5 text-xs font-medium text-muted-foreground">
+                    {project.year}
+                  </span>
+                </div>
+
+                <h3 className="mb-1 text-balance text-lg font-semibold leading-tight">{project.title}</h3>
+
+                <p className="mb-2 min-h-0 flex-1 text-pretty text-sm leading-snug text-muted-foreground">{project.description}</p>
+
+                <div className="border-t border-border/50 pt-2 mb-0 text-xs font-medium text-accent">
+                  {project.impact}
+                </div>
+
+                <div className="-mt-2.5">
+                  <div
+                    role="status"
+                    aria-label="Work in progress"
+                    className="pointer-events-none flex h-7 w-full cursor-default select-none items-center justify-between rounded-md bg-primary px-3 text-xs font-medium text-primary-foreground shadow-sm"
+                  >
+                    <span className="min-w-0 truncate pr-2 text-left">This flight will take off soon.</span>
+                    <Plane className="size-3 shrink-0 opacity-70" aria-hidden />
+                  </div>
+                </div>
+              </Card>
+            )
+          }
+
           // Other projects show coming soon
           return (
             <div key={project.id} className="relative">
@@ -115,14 +148,6 @@ export function PassionProjects() {
                   <p className="mb-2 text-pretty text-sm leading-snug text-muted-foreground">
                     {project.description}
                   </p>
-
-                  <div className="mb-2 flex flex-wrap gap-1.5">
-                    {project.tags.map((tag) => (
-                      <span key={tag} className="rounded-full bg-secondary px-2 py-0.5 text-xs font-medium">
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
 
                   <div className="border-t border-border/50 pt-2 mb-2 text-xs font-medium text-accent">
                     {project.impact}
