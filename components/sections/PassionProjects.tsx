@@ -21,7 +21,7 @@ const passionProjects: PassionProject[] = [
     description: "An interactive Formula 1 race calendar that makes complex season data easy to explore. Built with a product-first mindset, prioritizing clarity and fan experience.",
     year: "2026",
     impact: "Built for fun and learning",
-    liveUrl: "https://f1-2026-calendar-theta.vercel.app/",
+    liveUrl: "https://tracksidebytaylor.co/",
   },
   {
     id: "passion-project-2",
