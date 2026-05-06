@@ -30,6 +30,7 @@ const passionProjects: PassionProject[] = [
       "A shareable travel site that turns places I've been into one guide—maps, recommendations, and packing. Built with a product-first mindset, prioritizing clarity and reuse.",
     year: "2026",
     impact: "Shipping one destination at a time",
+    liveUrl: "https://taylortravels.co/",
     status: "in-flight",
   },
 ]
@@ -117,16 +118,32 @@ export function PassionProjects() {
                   {project.impact}
                 </div>
 
-                <div className="-mt-2.5">
-                  <div
-                    role="status"
-                    aria-label="Work in progress"
-                    className="pointer-events-none flex h-7 w-full cursor-default select-none items-center justify-between rounded-md bg-primary px-3 text-xs font-medium text-primary-foreground shadow-sm"
-                  >
-                    <span className="min-w-0 truncate pr-2 text-left">This flight will take off soon.</span>
-                    <Plane className="size-3 shrink-0 opacity-70" aria-hidden />
+                {project.liveUrl ? (
+                  <div className="-mt-2.5">
+                    <Button
+                      asChild
+                      variant="default"
+                      size="sm"
+                      className="h-7 w-full justify-between text-xs font-medium bg-primary text-primary-foreground hover:bg-primary/90 dark:hover:bg-primary/80"
+                    >
+                      <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="group/btn">
+                        <span>View Travel Site</span>
+                        <Plane className="ml-1.5 size-3 opacity-70 transition-opacity group-hover/btn:opacity-100" aria-hidden />
+                      </a>
+                    </Button>
                   </div>
-                </div>
+                ) : (
+                  <div className="-mt-2.5">
+                    <div
+                      role="status"
+                      aria-label="Work in progress"
+                      className="pointer-events-none flex h-7 w-full cursor-default select-none items-center justify-between rounded-md bg-primary px-3 text-xs font-medium text-primary-foreground shadow-sm"
+                    >
+                      <span className="min-w-0 truncate pr-2 text-left">This flight will take off soon.</span>
+                      <Plane className="size-3 shrink-0 opacity-70" aria-hidden />
+                    </div>
+                  </div>
+                )}
               </Card>
             )
           }
