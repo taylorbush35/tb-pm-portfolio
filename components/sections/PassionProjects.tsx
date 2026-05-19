@@ -1,7 +1,7 @@
 import Link from "next/link"
 import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { ArrowRight, ArrowUpRight, Plane } from "lucide-react"
+import { ArrowRight, ArrowUpRight } from "lucide-react"
 
 type PassionProject = {
   id: string
@@ -10,8 +10,7 @@ type PassionProject = {
   year: string
   impact: string
   liveUrl?: string
-  /** Shown unblurred with a WIP status bar while the build is active */
-  status?: "in-flight"
+  liveButtonLabel?: string
 }
 
 const passionProjects: PassionProject[] = [
@@ -22,6 +21,7 @@ const passionProjects: PassionProject[] = [
     year: "2026",
     impact: "Built for fun and learning",
     liveUrl: "https://tracksidebytaylor.co/",
+    liveButtonLabel: "View Live Calendar",
   },
   {
     id: "passion-project-2",
@@ -31,9 +31,13 @@ const passionProjects: PassionProject[] = [
     year: "2026",
     impact: "Shipping one destination at a time",
     liveUrl: "https://taylortravels.co/",
-    status: "in-flight",
+    liveButtonLabel: "View Travel Site",
   },
 ]
+
+function isPassionCaseStudy(id: string) {
+  return id === "passion-project-1" || id === "passion-project-2"
+}
 
 export function PassionProjects() {
   return (
@@ -54,9 +58,7 @@ export function PassionProjects() {
 
       <div className="relative grid gap-6 sm:grid-cols-2">
         {passionProjects.map((project) => {
-          const isCaseStudy = project.id === "passion-project-1"
-
-          if (isCaseStudy) {
+          if (isPassionCaseStudy(project.id)) {
             return (
               <div key={project.id} className="relative h-full min-h-0">
                 <Link href={`/work/${project.id}`} className="block h-full min-h-0">
@@ -89,7 +91,7 @@ export function PassionProjects() {
                           className="h-7 w-full justify-between text-xs font-medium bg-primary text-primary-foreground hover:bg-primary/90 dark:hover:bg-primary/80"
                         >
                           <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="group/btn">
-                            <span>View Live Calendar</span>
+                            <span>{project.liveButtonLabel ?? "View Live Site"}</span>
                             <ArrowUpRight className="ml-1.5 size-3 opacity-70 transition-opacity group-hover/btn:opacity-100" />
                           </a>
                         </Button>
@@ -98,53 +100,6 @@ export function PassionProjects() {
                   </Card>
                 </Link>
               </div>
-            )
-          }
-
-          if (project.status === "in-flight") {
-            return (
-              <Card key={project.id} className="flex h-full min-h-0 flex-col border-border/50 p-3">
-                <div className="mb-1.5 flex items-start justify-between">
-                  <span className="rounded-full bg-secondary px-2.5 py-0.5 text-xs font-medium text-muted-foreground">
-                    {project.year}
-                  </span>
-                </div>
-
-                <h3 className="mb-1 text-balance text-lg font-semibold leading-tight">{project.title}</h3>
-
-                <p className="mb-2 min-h-0 flex-1 text-pretty text-sm leading-snug text-muted-foreground">{project.description}</p>
-
-                <div className="border-t border-border/50 pt-2 mb-0 text-xs font-medium text-accent">
-                  {project.impact}
-                </div>
-
-                {project.liveUrl ? (
-                  <div className="-mt-2.5">
-                    <Button
-                      asChild
-                      variant="default"
-                      size="sm"
-                      className="h-7 w-full justify-between text-xs font-medium bg-primary text-primary-foreground hover:bg-primary/90 dark:hover:bg-primary/80"
-                    >
-                      <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="group/btn">
-                        <span>View Travel Site</span>
-                        <Plane className="ml-1.5 size-3 opacity-70 transition-opacity group-hover/btn:opacity-100" aria-hidden />
-                      </a>
-                    </Button>
-                  </div>
-                ) : (
-                  <div className="-mt-2.5">
-                    <div
-                      role="status"
-                      aria-label="Work in progress"
-                      className="pointer-events-none flex h-7 w-full cursor-default select-none items-center justify-between rounded-md bg-primary px-3 text-xs font-medium text-primary-foreground shadow-sm"
-                    >
-                      <span className="min-w-0 truncate pr-2 text-left">This flight will take off soon.</span>
-                      <Plane className="size-3 shrink-0 opacity-70" aria-hidden />
-                    </div>
-                  </div>
-                )}
-              </Card>
             )
           }
 

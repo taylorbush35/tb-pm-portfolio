@@ -94,6 +94,26 @@ const projectData: Record<string, any> = {
       "Established a scalable foundation for future features and iteration",
     ],
   },
+  "passion-project-2": {
+    title: "Taylor Travels",
+    year: "2025–2026",
+    role: "Product Designer & Builder (Independent Project)",
+    tags: ["Travel", "Product", "UX", "Content"],
+    overview:
+      "Travel inspiration is everywhere, but useful trip context rarely stays organized. Taylor Travels is a personal travel journal designed to capture where I've been, what I'd recommend, and how I'd approach a destination again — combining guides, maps, packing notes, and curated recommendations into one intentional, shareable experience.",
+    challenge:
+      "After visiting ten countries in two years, my best recommendations lived across camera rolls, Google Maps pins, Notes app checklists, and scattered messages to friends. Existing travel platforms either prioritized generic recommendations or overwhelming amounts of content, making it difficult to revisit a destination with the context that actually made the trip successful — what was worth booking, what I'd skip next time, and how to realistically plan the experience.",
+    solution: `Designed and built a destination-first travel platform focused on reusable trip planning and editorial storytelling. Structured each guide around practical decision-making — recommendations, neighborhoods, maps, cafés, restaurants, packing notes, and featured experiences — so users can quickly understand both the logistics and personality of a destination.
+
+Built reusable page templates and scalable content structures to support future country and city expansion while maintaining a cohesive visual system and navigation experience across the site.`,
+    outcome: [
+      "Shipped a fully deployed travel platform at taylortravels.co",
+      "Created scalable destination templates for future country and city guides",
+      "Consolidated fragmented travel planning into a structured, reusable experience",
+      "Balanced visual storytelling with practical trip-planning utility",
+      "Demonstrated end-to-end product thinking across UX, branding, information architecture, and frontend implementation",
+    ],
+  },
 }
 
 export default async function ProjectPage({ params }: { params: Promise<{ id: string }> }) {
@@ -157,6 +177,18 @@ export default async function ProjectPage({ params }: { params: Promise<{ id: st
           </section>
         )}
 
+        {id === "passion-project-2" && (
+          <section className="mb-12">
+            <div className="overflow-hidden rounded-lg border-2 border-[#4527A0] bg-secondary/30">
+              <img
+                src="/Travel%20Site.png"
+                alt="Taylor Travels homepage — intentional travel journal with featured destinations and country guides"
+                className="w-full"
+              />
+            </div>
+          </section>
+        )}
+
         {id === "agentic-help-assistant" && (
           <section className="mb-12">
             <div className="overflow-hidden rounded-lg border-2 border-[#4527A0] bg-secondary/30">
@@ -180,7 +212,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ id: st
         {/* What I Shipped */}
         <section className="mb-12">
           <h2 className="mb-4 text-2xl font-bold">What I Shipped</h2>
-          <p className="text-pretty leading-relaxed text-muted-foreground">{project.solution}</p>
+          <p className="text-pretty whitespace-pre-line leading-relaxed text-muted-foreground">{project.solution}</p>
         </section>
 
         {/* The Win */}
