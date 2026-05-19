@@ -78,8 +78,7 @@ const futureDestinations: {
   image: string
 }[] = []
 
-/** Set when the standalone travel site ships; switches the bar CTA from "Coming Soon" to a live link. */
-const travelSiteHref: string | null = null
+const travelSiteHref = "https://taylortravels.co/"
 
 export default function TravelPage() {
   return (
@@ -112,22 +111,16 @@ export default function TravelPage() {
                 — maps, recs, packing lists, and shareable itineraries. All crafted from my experiences.
               </span>
             </p>
-            {travelSiteHref ? (
-              <Button
-                asChild
-                size="sm"
-                variant="default"
-                className="relative z-[1] h-7 shrink-0 rounded-full px-4 text-xs font-semibold"
-              >
-                <Link href={travelSiteHref} target="_blank" rel="noopener noreferrer">
-                  Visit site
-                </Link>
-              </Button>
-            ) : (
-              <span className="relative z-[1] inline-flex h-7 shrink-0 items-center rounded-full bg-primary px-4 text-xs font-semibold text-primary-foreground shadow-sm">
-                Coming Soon
-              </span>
-            )}
+            <Button
+              asChild
+              size="sm"
+              variant="default"
+              className="relative z-[1] h-7 shrink-0 rounded-full px-4 text-xs font-semibold"
+            >
+              <Link href={travelSiteHref} target="_blank" rel="noopener noreferrer">
+                View Travel Site
+              </Link>
+            </Button>
           </div>
         </div>
 
